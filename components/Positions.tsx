@@ -51,7 +51,7 @@ export default function Positions() {
                 </div>
             </div>
             <div className="flex justify-center mt-8">
-                <Button variant="black">Explorar roles</Button>
+                <Button>Explorar roles</Button>
             </div>
         </div>
     )
