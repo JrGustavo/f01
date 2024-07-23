@@ -3,19 +3,16 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import Image from "next/image";
 
-export default function Component() {
+export default function Header() {
     const [query, setQuery] = useState("");
 
     return (
+
+
         <header className="flex flex-col items-center justify-center w-full min-h-screen bg-white">
-            <nav className="flex items-center justify-between w-full px-8 py-4">
-                <div className="flex items-center space-x-2">
-                    <Button variant="outline">Blog Fleet</Button>
-                    <Button variant="outline">Estamos contratando</Button>
-                </div>
-                <Button variant="outline">Ingresar</Button>
-            </nav>
+
             <div className="flex flex-col items-center justify-center w-full text-center">
                 <h1 className="text-5xl font-bold">
                     The Vertical AI For Financial Services
@@ -29,7 +26,7 @@ export default function Component() {
                 </Button>
             </div>
             <div className="relative w-full max-w-4xl mt-12 overflow-hidden rounded-lg shadow-lg">
-                <img
+                <Image
                     src="/images/Cube3d.jpg"
                     alt="Kante"
                     width={800}

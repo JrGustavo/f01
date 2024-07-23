@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button"
 import Image from 'next/image'
 
 
-export default function Positions() {
+export default function Section2() {
     return (
         <div className="w-full max-w-6xl mx-auto py-12">
             <div className="flex flex-col items-center gap-4 mb-8">
