@@ -4,25 +4,35 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import Image from "next/image";
+import { Typewriter } from 'react-simple-typewriter';
+
 
 export default function Header() {
     const [query, setQuery] = useState("");
 
     return (
-
-
         <header className="flex flex-col items-center justify-center w-full min-h-screen bg-white">
-
             <div className="flex flex-col items-center justify-center w-full text-center">
-                <h1 className="text-5xl font-bold">
-                    The Vertical AI For Financial Services
+                <h1 className="text-7xl font-bold">
+                    The Vertical AI For{' '}
+                    <span className="text-[#0070F3]">
+          <Typewriter
+              words={['Banking', 'Fintech', 'Lenders']}
+              loop={0} // Puedes cambiar este valor para que se repita infinitamente
+              cursor
+              cursorStyle="_"
+              typeSpeed={70}
+              deleteSpeed={50}
+              delaySpeed={1000}
+          />
+        </span>
                 </h1>
-                <p className="mt-4 text-lg">
-                    And you need unparalleled tools to perfect every detail.
+                <p className="mt-4 text-xm">
+                    La plataforma de Fleet permite lanzar experiencias personalizadas para los consumidores  a través de modelos de base especializados (LLMs).
                 </p>
                 <Button className="mt-6" variant="default">
-                    <BookIcon className="mr-2" />
-                    Book a demo
+                    <BookIcon className="mr-2"/>
+              Agendar Demo
                 </Button>
             </div>
             <div className="relative w-full max-w-4xl mt-12 overflow-hidden rounded-lg shadow-lg">
@@ -43,7 +53,7 @@ export default function Header() {
                             className="flex-1 px-4 py-2 border-none rounded-full focus:outline-none"
                         />
                         <Button variant="default" className="ml-2">
-                            <ArrowRightIcon className="w-5 h-5" />
+                            <ArrowRightIcon className="w-5 h-5"/>
                         </Button>
                     </div>
                 </div>
@@ -52,7 +62,7 @@ export default function Header() {
     );
 }
 
-function ArrowRightIcon({  ...props }) {
+function ArrowRightIcon({...props}) {
     return (
         <svg
 
@@ -67,13 +77,13 @@ function ArrowRightIcon({  ...props }) {
             strokeLinecap="round"
             strokeLinejoin="round"
         >
-            <path d="M5 12h14" />
-            <path d="m12 5 7 7-7 7" />
+            <path d="M5 12h14"/>
+            <path d="m12 5 7 7-7 7"/>
         </svg>
     );
 }
 
-function BookIcon({ ...props }) {
+function BookIcon({...props}) {
     return (
         <svg
             {...props}
