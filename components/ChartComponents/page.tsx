@@ -41,30 +41,42 @@ export const ChartComponent = () => {
     const [selectedOption, setSelectedOption] = useState('income');
 
     return (
-        <div className="flex flex-col md:flex-row items-center justify-center w-full">
-            <div className="flex flex-col items-start p-4 space-y-4">
-                <h1 className="text-2xl font-bold">Build with <span className="text-purple-500">Mandelbrot</span></h1>
-                <p className="text-lg">Our proprietary LLM + Your Data</p>
-                <div className="flex space-x-2">
-                    {['income', 'churn', 'conversions', 'creditRisk'].map((option) => (
-                        <button
-                            key={option}
-                            className={`py-2 px-4 rounded-full ${selectedOption === option ? 'bg-purple-500 text-white' : 'bg-white border'}`}
-                            onClick={() => setSelectedOption(option)}
-                        >
-                            {option.charAt(0).toUpperCase() + option.slice(1)}
-                        </button>
-                    ))}
+        <section className="bg-primary-500 rounded-3xl px-4 lg:px-40">
+            <div className="flex text-white items-center gap-2 border-b border-neutral-300 mb-12 sm:mb-14 pb-8">
+                <span className="h-2 w-2 bg-primary-700 block rounded-full"/>
+                <span className="text-primary-400">Integraciones</span>
+            </div>
+
+            <div className="flex flex-col md:flex-row items-center justify-center w-full">
+                <div className="flex flex-col items-start p-4 space-y-4">
+                    <h1 className="text-2xl font-bold">Build with <span className="text-purple-500">Mandelbrot</span>
+                    </h1>
+                    <p className="text-lg">Our proprietary LLM + Your Data</p>
+                    <div className="flex space-x-2">
+                        {['income', 'churn', 'conversions', 'creditRisk'].map((option) => (
+                            <button
+                                key={option}
+                                className={`py-2 px-4 rounded-full ${selectedOption === option ? 'bg-purple-500 text-white' : 'bg-white border'}`}
+                                onClick={() => setSelectedOption(option)}
+                            >
+                                {option.charAt(0).toUpperCase() + option.slice(1)}
+                            </button>
+                        ))}
+                    </div>
+                    <p className="text-gray-600 mt-4">
+                        Trained from scratch on your data. Mandelbrot is privately trained to automatically extract a
+                        user’s financial behavior and their likelihood to adopt different financial products.
+                        Fine-tune Mandelbrot embeddings to train any predictive model with our simple APIs.
+                    </p>
                 </div>
-                <p className="text-gray-600 mt-4">
-                    Trained from scratch on your data. Mandelbrot is privately trained to automatically extract a user’s financial behavior and their likelihood to adopt different financial products.
-                    Fine-tune Mandelbrot embeddings to train any predictive model with our simple APIs.
-                </p>
+                <div className="w-full md:w-1/2 p-4">
+                    <Scatter data={dataOptions[selectedOption]}/>
+                </div>
             </div>
-            <div className="w-full md:w-1/2 p-4">
-                <Scatter data={dataOptions[selectedOption]} />
-            </div>
-        </div>
+
+        </section>
+
+
     );
 };
 
