@@ -8,6 +8,7 @@ import Fragment from "@/components/Fragment/page";
 import Graphics from "@/components/Graphics/page";
 import Nodos from "@/components/Nodo/page";
 import Features from "@/components/Features/page";
+import About from "@/components/About/page";
 
 
 export default function Home() {
@@ -15,6 +16,7 @@ export default function Home() {
         <div>
             <Navbar/>
             <Header/>
+            <About/>
             <ChartComponent/>
             <Fragment/>
             <Graphics/>
